@@ -1,7 +1,7 @@
-from libs import LibArray
+from libs import LibArray, LibHashMap
 from examples import Player
 
-def main():
+def example_array():
   arr = LibArray(10)
   myArr = arr.get_array()
   print("Init array", myArr)
@@ -18,6 +18,15 @@ def main():
             Player(4000, 'Nick 7')
         ]
   print(player.findSpot(arr))
+
+
+def example_hash():
+  hash_map = LibHashMap(16)
+  hash_map.add("apple", "A fruit")
+  hash_map.add("banana", "Yellow fruit")
+  hash_map.add("apple", "A delicious fruit")
+  print(hash_map.get("apple"))
+  print(hash_map.get("banana"))
  
 if __name__ == '__main__':
-  main()
+  example_hash()
