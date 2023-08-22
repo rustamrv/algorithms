@@ -1,4 +1,4 @@
-from libs import LibArray, LibHashMap
+from libs import LibArray, LibHashMap, LibDynArray
 from examples import Player
 
 def example_array():
@@ -27,6 +27,34 @@ def example_hash():
   hash_map.add("apple", "A delicious fruit")
   print(hash_map.get("apple"))
   print(hash_map.get("banana"))
+
+def example_dyn_arr(): 
+  dyn_array = LibDynArray()
  
+  dyn_array.add(10)
+  dyn_array.add(20)
+  dyn_array.add(30)
+  dyn_array.add(40)
+ 
+  print("Length dyn array:", dyn_array.get_size())
+ 
+  dyn_array.print_array()
+ 
+  print('Set value by index')
+  dyn_array.set_value(1, 25)
+ 
+  dyn_array.print_array()
+ 
+  print('Insert element by index')
+  dyn_array.insert(35, 2)
+
+  dyn_array.print_array()
+ 
+  print('Delete element')
+  dyn_array.remove()
+
+  dyn_array.print_array()
+
+
 if __name__ == '__main__':
-  example_hash()
+  example_dyn_arr()
