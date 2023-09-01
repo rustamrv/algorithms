@@ -1,4 +1,4 @@
-from libs import LibArray, LibHashMap, LibDynArray
+from libs import LibArray, LibHashMap, LibDynArray, LinkedList
 from examples import Player
 
 def example_array():
@@ -56,5 +56,17 @@ def example_dyn_arr():
   dyn_array.print_array()
 
 
+def example_node(): 
+  myList = LinkedList()
+  myList.append(10)
+  myList.append(20)
+  myList.append(30)
+  myList.display()  
+
+  # myList.remove(20)
+  # myList.display() 
+
+
+
 if __name__ == '__main__':
-  example_dyn_arr()
+  example_node()
