@@ -1,4 +1,4 @@
-from libs import LibArray, LibHashMap, LibDynArray, LinkedList
+from libs import LibArray, LibHashMap, LibDynArray, LinkedList, DLinkedList
 from examples import Player
 
 def example_array():
@@ -56,7 +56,7 @@ def example_dyn_arr():
   dyn_array.print_array()
 
 
-def example_node(): 
+def example_linked_list(): 
   myList = LinkedList()
   myList.append(10)
   myList.append(20)
@@ -67,6 +67,29 @@ def example_node():
   # myList.display() 
 
 
+def example_dLinked_list():
+  my_list = DLinkedList()
+  # Add items to the beginning of the list using the push method
+  my_list.push(1)
+  my_list.push(2)
+  my_list.push(3)
+
+  # Add an item to the end of the list using the push_back method
+  my_list.push_back(4)
+
+  # Insert a new node after the node with value 2
+  my_list.insert(my_list.start.next, 5)
+
+  # Remove an item from the beginning of the list using the pop_front method
+  # my_list.pop_front()
+
+  # Now the list looks like this: 2 <-> 5 <-> 1 <-> 4
+
+  # Remove an item from the end of the list using the pop_back method
+  # my_list.pop_back()
+
+  # Print
+  my_list.print_list()
 
 if __name__ == '__main__':
-  example_node()
+  example_dLinked_list()
