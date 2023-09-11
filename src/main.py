@@ -1,4 +1,4 @@
-from libs import LibArray, LibHashMap, LibDynArray, LinkedList, DLinkedList
+from libs import LibArray, LibHashMap, LibDynArray, LinkedList, DLinkedList, LibQueue
 from examples import Player
 
 def example_array():
@@ -72,13 +72,13 @@ def example_dLinked_list():
   # Add items to the beginning of the list using the push method
   my_list.push(1)
   my_list.push(2)
-  my_list.push(3)
+  # my_list.push(3)
 
   # Add an item to the end of the list using the push_back method
   my_list.push_back(4)
 
   # Insert a new node after the node with value 2
-  my_list.insert(my_list.start.next, 5)
+  # my_list.insert(my_list.start.next, 5)
 
   # Remove an item from the beginning of the list using the pop_front method
   # my_list.pop_front()
@@ -91,5 +91,27 @@ def example_dLinked_list():
   # Print
   my_list.print_list()
 
+def example_queue():
+  # Создаем очередь с максимальным размером 5
+  my_queue = LibQueue(5)
+
+  # Проверяем, пуста ли очередь
+  print("Очередь пуста?", my_queue.empty())
+
+  # Добавляем элементы в очередь
+  my_queue.enqueue(1)
+  my_queue.enqueue(2)
+  my_queue.enqueue(3) 
+  # Проверяем первый элемент в очереди (без удаления)
+  print("Первый элемент в очереди:", my_queue.peek())
+
+  # Извлекаем элементы из очереди
+  item1 = my_queue.dequeue()
+  item2 = my_queue.dequeue()
+
+  print("Извлеченные элементы:", item1, item2)
+
+  # Проверяем, пуста ли очередь после извлечения
+  print("Очередь пуста?", my_queue.empty())
 if __name__ == '__main__':
-  example_dLinked_list()
+  example_queue()

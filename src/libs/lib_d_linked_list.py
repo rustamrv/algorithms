@@ -11,8 +11,8 @@ class Node:
 class DLinkedList:
     
     def __init__(self) -> None:
-        self.start = None
-        self.end = None
+        self.start = None # head
+        self.end = None # tail
 
     # Операция добавления элемента в начало списка
     def push(self, x: int):
