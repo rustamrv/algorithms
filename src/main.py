@@ -1,4 +1,4 @@
-from libs import LibArray, LibHashMap, LibDynArray, LinkedList, DLinkedList, LibQueue
+from libs import *
 from examples import Player
 
 def example_array():
@@ -113,5 +113,14 @@ def example_queue():
 
   # Проверяем, пуста ли очередь после извлечения
   print("Очередь пуста?", my_queue.empty())
+
+def example_sorted():
+    lib_sort = LibSort([6, 3, 4, 1, 2, 5])
+    print(lib_sort.data)
+
+    lib_sort.counter_sort()
+    print(lib_sort.data)
+
+
 if __name__ == '__main__':
-  example_queue()
+  example_sorted()
