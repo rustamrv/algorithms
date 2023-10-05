@@ -122,5 +122,24 @@ def example_sorted():
     print(lib_sort.data)
 
 
+def example_recursion():
+  lc = LibRecursion([0] * 4)
+  lc.gen(0, 4)
+
+def example_bit():
+  b = Bitset(5)
+  def gen(x: int, n: int, k: int):
+    if n - x < k:
+      return
+    if x == n:
+      for i in range(0, n):
+        print(f'Bit {i}: {b.get(i)}')
+      return
+    b.set_value(x, 0)
+    gen(x + 1, n, k)
+    b.set_value(x, 1)
+    gen(x + 1, n, k - 1)
+  gen(0,5,3)
+    
 if __name__ == '__main__':
-  example_sorted()
+  example_bit()
