@@ -115,10 +115,10 @@ def example_queue():
   print("Очередь пуста?", my_queue.empty())
 
 def example_sorted():
-    lib_sort = LibSort([6, 3, 4, 1, 2, 5])
+    lib_sort = LibSort([5,1,3,2,2,4,6,8])
     print(lib_sort.data)
 
-    lib_sort.counter_sort()
+    lib_sort.merge_sort(lib_sort.data)
     print(lib_sort.data)
 
 
@@ -140,6 +140,20 @@ def example_bit():
     b.set_value(x, 1)
     gen(x + 1, n, k - 1)
   gen(0,5,3)
-    
+
+
+def hanoi(n: int, fr: str, to: str, aux: str):
+  if n == 1:
+    print('Move from ' + fr + ' to ' + to)
+    return
+  hanoi(n - 1, fr, aux, to)
+  print('Move from ' + fr + ' to ' + to)
+  hanoi(n - 1, aux, to, fr)
+
+
+def example_honoi():
+  hanoi(3, 'A', 'C', "B")
+
+
 if __name__ == '__main__':
-  example_bit()
+  example_sorted()

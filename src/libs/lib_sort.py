@@ -58,4 +58,25 @@ class LibSort:
             for j in range(0, data_cnt[i]):
                 self.data[pt] = i
                 pt += 1
-            
+
+    def merge(self, a: list, b: list):
+        result: list = []
+        p1, p2 = 0, 0 
+        while (p1 < len(a)) and (p2 < len(b)):
+            if(a[p1] < b[p2]):
+                result.append(a[p1])
+                p1 += 1
+            else: 
+                result.append(b[p2])
+                p2 += 1
+        result.extend(a[p1:])
+        result.extend(b[p2:])
+        return result
+
+    def merge_sort(self, data: list):
+        if len(data) <= 1:
+            return data
+        m = len(data) // 2
+        l, r = self.merge_sort(data[:m]),  self.merge_sort(data[m:])
+        self.data = self.merge(l, r)
+        return self.data
