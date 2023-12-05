@@ -1,4 +1,4 @@
-from .lib_array import *
+from .data_structures import *
 from .lib_hash import *
 from .lib_dyn_array import *
 from .lib_linked_list import *
@@ -7,3 +7,4 @@ from .lib_queue import *
 from .lib_sort import *
 from .lib_recursion import *
 from .lib_bit import *
+from .lib_tree import *

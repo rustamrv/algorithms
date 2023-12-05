@@ -154,6 +154,14 @@ def hanoi(n: int, fr: str, to: str, aux: str):
 def example_honoi():
   hanoi(3, 'A', 'C', "B")
 
+def example_tree():
+  tree = LibTree()
+  tree.print(tree.root)
+  tree.add(3)
+  tree.add(4)
+  tree.add(1)
+  tree.add(8)
+  tree.print(tree.root)
 
 if __name__ == '__main__':
-  example_sorted()
+  example_tree()
